@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS & JavaScript Animation Project</title>
+    <style>
+      /* 🎨 Part 1: CSS Transitions & Animations */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background: #f0f0f0;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #2980b9;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+        margin-top: 20px;
+        transition: transform 0.5s ease;
+      }
+
+      .slide {
+        transform: translateX(200px);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade {
+        animation: fadeIn 2s ease-in;
+      }
+
+      .modal {
+        width: 300px;
+        height: 150px;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 1rem;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        display: none;
+      }
+
+      .modal.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Interactive CSS & JavaScript Demo</h1>
+
+    <!-- Button to trigger box animation -->
+    <button class="btn" onclick="animateBox()">Animate Box</button>
+    <div id="box" class="box"></div>
+
+    <!-- Button to trigger modal -->
+    <button class="btn" onclick="toggleModal()">Toggle Modal</button>
+    <div id="modal" class="modal">Hello! I'm a modal.</div>
+
+    <!-- Button to calculate and display area -->
+    <button class="btn" onclick="showArea()">Calculate Area</button>
+    <p id="areaResult"></p>
+
+    <script>
+      // 📚 Part 2: JavaScript Functions — Scope, Parameters & Return Values
+
+      function calculateArea(width, height) {
+        return width * height;
+      }
+
+      function showArea() {
+        const result = calculateArea(5, 10);
+        document.getElementById("areaResult").textContent =
+          "Area is: " + result;
+      }
+
+      // 🎬 Part 3: Combining CSS Animations with JavaScript
+
+      function animateBox() {
+        const box = document.getElementById("box");
+        box.classList.toggle("slide");
+      }
+
+      function toggleModal() {
+        const modal = document.getElementById("modal");
+        modal.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

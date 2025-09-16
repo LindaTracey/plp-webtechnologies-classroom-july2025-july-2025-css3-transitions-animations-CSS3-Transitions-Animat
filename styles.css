@@ -1,0 +1,66 @@
+/* 🎨 Chakra-Inspired CSS Transitions & Animations */
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: #f7fafc; /* gray.100 */
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #3182ce; /* blue.600 */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2b6cb0; /* blue.700 */
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #f6ad55; /* orange.400 */
+  margin-top: 20px;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  transform: translateX(200px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation: fadeIn 2s ease-in;
+}
+
+.modal {
+  width: 300px;
+  height: 150px;
+  background: white;
+  border: 1px solid #e2e8f0; /* gray.300 */
+  padding: 1rem;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: none;
+}
+
+.modal.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
